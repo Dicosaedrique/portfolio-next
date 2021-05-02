@@ -25,7 +25,7 @@ export default function Masthead() {
             {/* Masthead Subheading */}
             <p className="masthead-subheading font-weight-light">Étudiant en Informatique à l'UQAC (Québec)</p>
             <a className="text-light mb-4" href="https://goo.gl/maps/j2K89sgKMcmoL1eQA" target="_blank">
-                <i className="fa fa-map-marker-alt mr-2"></i> Chicoutimi (QC), Canada
+                <i className="fa fa-map-marker-alt me-2"></i> Chicoutimi (QC), Canada
             </a>
             <br />
             <br />

@@ -19,7 +19,7 @@ export default function Contact({ linkedIn, github, devTo, email, color = 'light
         <div className="text-center">
             {email && (
                 <a className={`text-${color} my-3 d-block h6`} href={`mailto:${email}`}>
-                    <i className="fas fa-envelope mr-2"></i> {email}
+                    <i className="fas fa-envelope me-2"></i> {email}
                 </a>
             )}
             {linkedIn && (

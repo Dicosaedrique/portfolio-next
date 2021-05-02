@@ -4,10 +4,11 @@ export interface AutoSectionProps {
     background?: string; // couleur de fond (optionnel par défaut clair = blanc)
     text?: string; // couleur du texte (optionnel par défaut fond foncé = texte blanc)
     light?: boolean; // pour les diviseur (true = fond foncé)
+    [key: string]: any;
 }
 
 export interface SectionsPagesProps {
-    beginLight: boolean; // premier élément du contneur est clair ?
+    beginLight?: boolean; // premier élément du contneur est clair ?
     sections: React.FunctionComponent<AutoSectionProps>[]; // les sections à afficher
     lightText?: string; // couleur bootstrap du texte d'une section à fond clair
     darkText?: string; // couleur bootstrap du texte d'une section à fond foncé

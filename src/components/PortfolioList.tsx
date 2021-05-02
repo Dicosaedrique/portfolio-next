@@ -1,26 +1,21 @@
 import Link from 'next/link';
+import { ProjectPreview, getProjectLinkFromId } from '../lib/project';
 
-export interface PortfolioItemProps {
-    title: string;
-    text?: string;
-    href: string;
-    image: string;
-    alt?: string;
-}
-
-// défini un item de portfolio avec un titre, du texte optionnel, une image et un lien vers la page
-// du projet dans le portfolio
-export function PortfolioItem({ title, href, text, image, alt }: PortfolioItemProps) {
+// défini un item de portfolio avec un titre, du texte optionnel,
+// une image et un lien vers la page du projet dans le portfolio
+export function PortfolioItem({ id, title, subTitle, cover, coverAlt = '' }: ProjectPreview) {
     return (
         <div className="col my-4">
-            <Link href={href}>
+            <Link href={getProjectLinkFromId(id)}>
                 <a>
                     <div className="portfolio-item mx-auto">
                         <div className="portfolio-item-fader h-100 w-100">
                             <div className="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div className="portfolio-item-caption-content d-flex flex-column justify-content-center text-center text-white h-100 w-100 p-3">
                                     <h2 dangerouslySetInnerHTML={{ __html: title }}></h2>
-                                    {text && <p className="lead" dangerouslySetInnerHTML={{ __html: text }}></p>}
+                                    {subTitle && (
+                                        <p className="lead" dangerouslySetInnerHTML={{ __html: subTitle }}></p>
+                                    )}
                                 </div>
                             </div>
                             <div className="portfolio-item-caption-button d-flex flex-column text-white align-items-center justify-content-center h-100 w-100">
@@ -28,7 +23,7 @@ export function PortfolioItem({ title, href, text, image, alt }: PortfolioItemPr
                                 <i className="fas fa-info-circle fa-3x"></i>
                             </div>
                         </div>
-                        <img className="img-fluid" src={image} alt={alt} />
+                        <img className="img-fluid" src={cover} alt={coverAlt} />
                     </div>
                 </a>
             </Link>
@@ -37,7 +32,7 @@ export function PortfolioItem({ title, href, text, image, alt }: PortfolioItemPr
 }
 
 export interface PortfolioListProps {
-    items: PortfolioItemProps[];
+    items: ProjectPreview[];
 }
 
 // définit une liste d'item de portfolio

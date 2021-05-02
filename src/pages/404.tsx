@@ -5,9 +5,9 @@ import { defaultContactInfos } from '../components/content/Contact';
 import Link from 'next/link';
 
 // page d'erreur 404 du portfolio
-export default function Custom404({ pageHead, footerInfos, showCopyright, scripts }: PageInfos) {
+export default function Custom404({ pageHead, footer, copyright, scripts }: PageInfos) {
     return (
-        <Layout pageHead={pageHead} showCopyright={showCopyright} footerInfos={footerInfos} scripts={scripts}>
+        <Layout pageHead={pageHead} copyright={copyright} footer={footer} scripts={scripts}>
             <div className="container my-5 py-5">
                 <div className="text-center mb-5">
                     {/* animation glitch error tiré du style du template SB Admin 2 : https://startbootstrap.com/theme/sb-admin-2 */}
@@ -39,7 +39,7 @@ export default function Custom404({ pageHead, footerInfos, showCopyright, script
     );
 }
 
-// propriétés statique de la page d'accueil
+// propriétés statique de la page
 export const getStaticProps: GetStaticProps = async () => {
     const obj: { props: PageInfos } = {
         props: {
@@ -48,8 +48,8 @@ export const getStaticProps: GetStaticProps = async () => {
                 title: '404 - Not Found',
                 author: 'Antoine Bouabana'
             },
-            showCopyright: true,
-            footerInfos: { title: 'Où me trouver ?', ...defaultContactInfos },
+            copyright: true,
+            footer: true,
             scripts: []
         }
     };

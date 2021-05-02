@@ -1,14 +1,14 @@
-import Footer, { FooterInfos } from './template/footer';
+import { DefaultFooter } from './template/footer';
 import DefaultHead, { PageHead } from './template/head';
 import Navbar, { NavBarProps } from './template/nav';
 import StaticImportScripts from './template/scripts';
 
 export interface PageInfos {
     pageHead: PageHead;
-    footerInfos?: FooterInfos;
-    showCopyright?: boolean;
+    footer?: boolean;
+    copyright?: boolean;
     navbarInfos?: NavBarProps;
-    scripts: string[];
+    scripts?: string[];
 }
 
 interface LayoutProps extends PageInfos {
@@ -19,9 +19,9 @@ interface LayoutProps extends PageInfos {
 export default function Layout({
     pageHead: { title, author, description, noIndex },
     navbarInfos,
-    footerInfos,
+    footer,
     children,
-    showCopyright,
+    copyright,
     scripts
 }: LayoutProps) {
     return (
@@ -36,18 +36,10 @@ export default function Layout({
             {children}
 
             {/* le footer (optionnel) */}
-            {footerInfos && (
-                <Footer
-                    title={footerInfos.title}
-                    linkedIn={footerInfos.linkedIn}
-                    github={footerInfos.github}
-                    devTo={footerInfos.devTo}
-                    email={footerInfos.email}
-                />
-            )}
+            {footer && <DefaultFooter />}
 
             {/* Copyright / Crédits Section */}
-            {showCopyright && (
+            {copyright && (
                 <div className="copyright py-4 text-center text-white">
                     <div className="container">
                         <small>Copyright © Antoine Bouabana (Dicosaedrique) - 2021</small>
@@ -81,7 +73,7 @@ export default function Layout({
             </div>
 
             {/* Imports des scripts statiques */}
-            <StaticImportScripts scripts={scripts} />
+            {scripts && <StaticImportScripts scripts={scripts} />}
         </>
     );
 }

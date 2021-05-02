@@ -7,7 +7,7 @@ export interface NavBarItem {
 
 export interface NavBarProps {
     main: NavBarItem;
-    links: NavBarItem[];
+    links?: NavBarItem[];
 }
 
 // barre de navigation par défaut, offre le lien principal affiché en tout temps
@@ -28,11 +28,11 @@ export default function Navbar({ main, links }: NavBarProps) {
                     aria-expanded="false"
                     aria-label="Toggle navigation">
                     Menu
-                    <i className="fas fa-bars ml-1"></i>
+                    <i className="fas fa-bars ms-1"></i>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
-                    {links.length > 0 && (
-                        <ul className="navbar-nav ml-auto">
+                    {links && links.length > 0 && (
+                        <ul className="navbar-nav ms-auto">
                             {links.map(({ title, href }) => (
                                 <li className="nav-item mx-0 mx-lg-1" key={title}>
                                     <Link href={href}>

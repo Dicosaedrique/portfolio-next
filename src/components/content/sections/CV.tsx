@@ -14,7 +14,7 @@ export default function CV(props: AutoSectionProps) {
                     className={`btn btn-xl btn-outline-${props.light ? 'light' : 'secondary'}`}
                     target="_blank"
                     href="/files/cv_antoine_bouabana_2021.pdf">
-                    <i className="fas fa-download mr-2"></i>
+                    <i className="fas fa-download me-2"></i>
                     Télécharger (PDF)
                 </a>
             </div>

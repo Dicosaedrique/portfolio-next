@@ -41,7 +41,7 @@
                 else if (href[0] === '#') div = $(`#${href.substring(1)}`);
 
                 // si on a pas trouvé de div correspondante
-                if (!length in div || div.length === 0) div = null;
+                if (!('length' in div) || div.length === 0) div = null;
             }
 
             return {

@@ -1,4 +1,4 @@
-import Contact, { ContactInfos } from '../content/Contact';
+import Contact, { ContactInfos, defaultContactInfos } from '../content/Contact';
 
 export interface FooterInfos extends ContactInfos {
     title: string;
@@ -12,4 +12,8 @@ export default function Footer({ title, linkedIn, github, devTo, email }: Footer
             <Contact linkedIn={linkedIn} github={github} devTo={devTo} email={email} />
         </footer>
     );
+}
+
+export function DefaultFooter() {
+    return <Footer title="Où me trouver ?" {...defaultContactInfos} />;
 }
