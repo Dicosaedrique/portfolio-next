@@ -36,7 +36,9 @@ export default function Navbar({ main, links }: NavBarProps) {
                             {links.map(({ title, href }) => (
                                 <li className="nav-item mx-0 mx-lg-1" key={title}>
                                     <Link href={href}>
-                                        <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">{title}</a>
+                                        <a className="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger scroll-spy">
+                                            {title}
+                                        </a>
                                     </Link>
                                 </li>
                             ))}

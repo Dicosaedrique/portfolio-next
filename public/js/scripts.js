@@ -28,14 +28,47 @@
         }
     });
 
-    // Activate scrollspy to add active class to navbar items on scroll
-    $('body').scrollspy({
-        target: '#mainNav',
-        offset: 80
-    });
+    // récupération des élémentspour le scoll spy
+    const scrollSpies = $('.scroll-spy')
+        .map(function () {
+            const link = $(this);
+            const href = link.attr('href');
+
+            let div = null;
+
+            if (typeof href === 'string') {
+                if (href[0] === '/' && href[1] === '#') div = $(`#${href.substring(2)}`);
+                else if (href[0] === '#') div = $(`#${href.substring(1)}`);
+
+                // si on a pas trouvé de div correspondante
+                if (!length in div || div.length === 0) div = null;
+            }
+
+            return {
+                link,
+                div
+            };
+        })
+        .get()
+        .filter((elem) => elem.div !== null);
+
+    const offset = 100;
+
+    function scrollSpy() {
+        var currentTop = $(window).scrollTop();
+        scrollSpies.forEach(({ link, div }) => {
+            var elemTop = div.offset().top - offset;
+            var elemBottom = elemTop + div.height() + offset + offset;
+            if (currentTop >= elemTop && currentTop <= elemBottom) link.addClass('active');
+            else link.removeClass('active');
+        });
+    }
+
+    // scroll spy (source : https://stackoverflow.com/questions/30348314/how-to-use-scrollspy-without-using-bootstrap)
+    $(window).on('scroll', scrollSpy);
 
     // Scroll to top button appear
-    $(document).scroll(function () {
+    $(document).on('scroll', function () {
         var scrollDistance = $(this).scrollTop();
         if (scrollDistance > 100) {
             $('.scroll-to-top').fadeIn();
