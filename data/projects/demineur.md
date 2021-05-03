@@ -1,7 +1,7 @@
 ---
 pageTitle: 'Portfolio - Démineur 3D'
 title: 'Démineur 3D<br/>(Web)'
-subTitle: 'TypeScript, React, Three.js, Material-UI'
+subTitle: 'TypeScript, React, Three.js, Material UI'
 cover: '/images/portfolio/categories/jeux-video.png'
 coverAlt: 'image jeux vidéo'
 abstract: 'Un jeu de démineur sur navigateur en TypeScript, React et Three.js'

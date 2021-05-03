@@ -7,7 +7,7 @@
 (function ($) {
     ('use strict'); // Start of use strict
 
-    // Smooth scrolling using jQuery easing
+    // Smooth scrolling
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').on('click', function () {
         if (
             location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
@@ -28,7 +28,7 @@
         }
     });
 
-    // récupération des élémentspour le scoll spy
+    // récupération des éléments pour le scroll spy
     const scrollSpies = $('.scroll-spy')
         .map(function () {
             const link = $(this);

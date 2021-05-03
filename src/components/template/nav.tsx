@@ -22,8 +22,8 @@ export default function Navbar({ main, links }: NavBarProps) {
                 <button
                     className="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
                     type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarResponsive"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarResponsive"
                     aria-controls="navbarResponsive"
                     aria-expanded="false"
                     aria-label="Toggle navigation">
