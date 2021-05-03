@@ -1,6 +1,5 @@
 import Layout, { PageInfos } from '../components/layout';
 import { GetStaticProps } from 'next';
-import { DEFAULT_SCRIPTS } from '../components/template/scripts';
 import { bodyId } from './_document';
 import About from '../components/content/sections/About';
 import Masthead from '../components/content/Masthead';
@@ -16,9 +15,9 @@ interface HomePage extends PageInfos {
 }
 
 // page d'accueil du portfolio
-export default function HomePage({ pageHead, footer, copyright, scripts, navbarInfos, projectPreviews }: HomePage) {
+export default function HomePage({ pageHead, footer, copyright, navbarInfos, projectPreviews }: HomePage) {
     return (
-        <Layout pageHead={pageHead} navbarInfos={navbarInfos} copyright={copyright} footer={footer} scripts={scripts}>
+        <Layout pageHead={pageHead} navbarInfos={navbarInfos} copyright={copyright} footer={footer}>
             {/* Masthead */}
             <Masthead />
 
@@ -48,7 +47,6 @@ export const getStaticProps: GetStaticProps = async () => {
             },
             copyright: true,
             footer: true,
-            scripts: DEFAULT_SCRIPTS,
             navbarInfos: {
                 main: { title: 'Antoine Bouabana', href: `#${bodyId}` },
                 // devrait être plus intelligent

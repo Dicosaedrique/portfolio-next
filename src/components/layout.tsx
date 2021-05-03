@@ -1,14 +1,13 @@
 import { DefaultFooter } from './template/footer';
 import DefaultHead, { PageHead } from './template/head';
 import Navbar, { NavBarProps } from './template/nav';
-import StaticImportScripts from './template/scripts';
+import { DefaultScriptsImport } from './template/scripts';
 
 export interface PageInfos {
     pageHead: PageHead;
     footer?: boolean;
     copyright?: boolean;
     navbarInfos?: NavBarProps;
-    scripts?: string[];
 }
 
 interface LayoutProps extends PageInfos {
@@ -21,8 +20,7 @@ export default function Layout({
     navbarInfos,
     footer,
     children,
-    copyright,
-    scripts
+    copyright
 }: LayoutProps) {
     return (
         <>
@@ -73,7 +71,7 @@ export default function Layout({
             </div>
 
             {/* Imports des scripts statiques */}
-            {scripts && <StaticImportScripts scripts={scripts} />}
+            <DefaultScriptsImport />
         </>
     );
 }

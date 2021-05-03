@@ -1,10 +1,11 @@
+import { useEffect } from 'react';
+
 import Layout, { PageInfos } from '../../components/layout';
 import { getAllProjectIds, getProjectDataFromId } from '../../lib/project.next';
 import { ProjectData } from '../../lib/project';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { DEFAULT_SCRIPTS, GALLERY_LIGHT_SCRIPTS } from '../../components/template/scripts';
 import Header from '../../components/template/header';
-import Head from 'next/head';
+import setupGallery from '../../lib/gallery';
 
 interface ProjectPageProps {
     pageInfos: PageInfos;
@@ -13,13 +14,13 @@ interface ProjectPageProps {
 
 // page template d'un projet du portfolio
 export default function ProjectPage({ pageInfos, project }: ProjectPageProps) {
+    // créer la gallerie
+    useEffect(() => {
+        setupGallery({ containerId: 'gallery' });
+    });
+
     return (
         <Layout {...pageInfos}>
-            {/* Style pour la gallerie */}
-            <Head>
-                <link rel="stylesheet" href="/vendors/jquery-light-gallery/css/lightgallery.min.css" />
-            </Head>
-
             {/* Header */}
             <Header>
                 <h1
@@ -39,12 +40,12 @@ export default function ProjectPage({ pageInfos, project }: ProjectPageProps) {
                 <div className="container">
                     <div className="row text-secondary">
                         <div className="col-12 col-lg-8 mb-4">
-                            <div className="row mb-4" id="gallery-container">
+                            <div className="row mb-4" id="gallery">
                                 {project.screenshots &&
                                     project.screenshots.map(({ src, caption }) => (
                                         <div key={src} className="col-md-6">
-                                            <div className="thumbnail gallery-item" data-src={src}>
-                                                <img className="w-100" src={src} alt={caption} />
+                                            <div className="thumbnail gg-box">
+                                                <img className="w-100 gallery-img" src={src} alt={caption} />
                                                 <div className="caption text-center">
                                                     <p>{caption}</p>
                                                 </div>
@@ -125,7 +126,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         },
         copyright: true,
         footer: true,
-        scripts: [...DEFAULT_SCRIPTS, ...GALLERY_LIGHT_SCRIPTS],
         navbarInfos: {
             main: { title: 'Antoine Bouabana', href: '/#portfolio' }
         }

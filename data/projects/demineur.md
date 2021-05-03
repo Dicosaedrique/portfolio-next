@@ -31,5 +31,5 @@ Projet de reproduction d'un jeu de démineur en 3D fait sur mon temps libre. Je 
 et découvrir les moteurs de rendus côtés navigateurs (avec ici Three.js). Le jeu implémente toutes les
 fonctionnalités de bases du jeu de démineur. L'interface ainsi que la gestion du thème ont été créées
 avec la librairie Material UI.
-L'application est développée et construite avec Webpack sur un boilerplate
-personnalisée que j'ai également développée.
+
+L'application est développée et construite avec Webpack sur un boilerplate personnalisée que j'ai également développée.

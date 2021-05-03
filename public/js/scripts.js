@@ -3,11 +3,12 @@
  * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
  */
+
 (function ($) {
     ('use strict'); // Start of use strict
 
     // Smooth scrolling using jQuery easing
-    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').on('click', function () {
         if (
             location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
             location.hostname == this.hostname
@@ -19,8 +20,7 @@
                     {
                         scrollTop: target.offset().top - 71
                     },
-                    1000,
-                    'easeInOutExpo'
+                    500
                 );
 
                 return false;

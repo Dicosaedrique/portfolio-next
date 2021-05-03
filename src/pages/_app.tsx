@@ -12,6 +12,9 @@ import '../styles/theme.css';
 // imports de mes styles persos
 import '../styles/style.css';
 
+// import du style des galleries
+import '../styles/gallery.css';
+
 export default function App({ Component, pageProps }: AppProps) {
     return <Component {...pageProps} />;
 }
