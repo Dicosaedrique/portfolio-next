@@ -1,14 +1,15 @@
 import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
+import path from 'path';
 import remark from 'remark';
 import html from 'remark-html';
+
 import { ProjectData, ProjectPreview } from './project';
 
 const projectsDataDirectory = path.join(process.cwd(), 'data', 'projects');
 
 // renvoi la liste de tous les ids de projet
-export function getAllProjectIds() {
+export function getAllProjectIds(): string[] {
     const fileNames = fs.readdirSync(projectsDataDirectory);
     return fileNames.map((fileName) => fileName.replace(/\.md$/, ''));
 }

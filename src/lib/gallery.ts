@@ -4,7 +4,7 @@ interface GalleryOptions {
     containerId: string;
 }
 
-export default function gridGallery(options: GalleryOptions) {
+export default function gridGallery(options: GalleryOptions): void {
     const root = document.querySelector('body, html') as HTMLBodyElement;
     const container = document.querySelector(`#${options.containerId}`) as HTMLDivElement;
     const imageNodes = document.querySelectorAll('.gallery-img') as NodeListOf<HTMLImageElement>;
@@ -49,22 +49,6 @@ export default function gridGallery(options: GalleryOptions) {
         screen.hidden = true;
         root.style.overflow = 'auto';
         root.removeEventListener('keydown', hide);
-    }
-
-    // passe à l'image précédente (si possible)
-    function prev() {
-        const currentImageIdx = images.findIndex((image) => image.src === mainImg.src);
-        if (currentImageIdx !== -1 && currentImageIdx !== 0) {
-            mainImg.src = images[currentImageIdx - 1].src;
-        }
-    }
-
-    // passe à l'image suivante (si possible)
-    function next() {
-        const currentImageIdx = images.findIndex((image) => image.src === mainImg.src);
-        if (currentImageIdx !== -1 && currentImageIdx !== images.length - 1) {
-            mainImg.src = images[currentImageIdx + 1].src;
-        }
     }
 
     // AJOUTE LES LISTENERS

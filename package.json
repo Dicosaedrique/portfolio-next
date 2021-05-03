@@ -6,8 +6,9 @@
         "dev": "next dev",
         "build": "next build && next export",
         "start": "next start",
-        "lint": "eslint .",
-        "lint:fix": "eslint --fix ."
+        "lint": "eslint src/**",
+        "lint:fix": "eslint --fix src/**",
+        "prepare": "husky install"
     },
     "prettier": {
         "semi": true,
@@ -15,7 +16,8 @@
         "printWidth": 120,
         "singleQuote": true,
         "trailingComma": "none",
-        "jsxBracketSameLine": true
+        "jsxBracketSameLine": true,
+        "endOfLine": "auto"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.3",
@@ -42,6 +44,8 @@
         "eslint-plugin-prettier": "^3.4.0",
         "eslint-plugin-react": "^7.23.2",
         "eslint-plugin-react-hooks": "^4.2.0",
+        "eslint-plugin-simple-import-sort": "^7.0.0",
+        "husky": "^6.0.0",
         "prettier": "^2.2.1",
         "typescript": "^3.8.3"
     }

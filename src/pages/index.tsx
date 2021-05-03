@@ -1,21 +1,22 @@
-import Layout, { PageInfos } from '../components/layout';
 import { GetStaticProps } from 'next';
-import { bodyId } from './_document';
-import About from '../components/content/sections/About';
+
 import Masthead from '../components/content/Masthead';
+import About from '../components/content/sections/About';
 import CV from '../components/content/sections/CV';
-import Skills from '../components/content/sections/Skills';
-import SectionsPages, { AutoSectionProps } from '../components/sections/SectionsPage';
 import Portfolio from '../components/content/sections/Portfolio';
-import { getAllProjectPreviews } from '../lib/project.next';
+import Skills from '../components/content/sections/Skills';
+import Layout, { PageInfos } from '../components/layout';
+import SectionsPages, { AutoSectionProps } from '../components/sections/SectionsPage';
 import { ProjectPreview } from '../lib/project';
+import { getAllProjectPreviews } from '../lib/project.next';
+import { bodyId } from './_document';
 
 interface HomePage extends PageInfos {
     projectPreviews: ProjectPreview[];
 }
 
 // page d'accueil du portfolio
-export default function HomePage({ pageHead, footer, copyright, navbarInfos, projectPreviews }: HomePage) {
+export default function HomePage({ pageHead, footer, copyright, navbarInfos, projectPreviews }: HomePage): JSX.Element {
     return (
         <Layout pageHead={pageHead} navbarInfos={navbarInfos} copyright={copyright} footer={footer}>
             {/* Masthead */}

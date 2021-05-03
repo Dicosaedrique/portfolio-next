@@ -12,7 +12,7 @@ export interface NavBarProps {
 
 // barre de navigation par défaut, offre le lien principal affiché en tout temps
 // et une liste de liens(cachée sur les mobiles)
-export default function Navbar({ main, links }: NavBarProps) {
+export default function Navbar({ main, links }: NavBarProps): JSX.Element {
     return (
         <nav className="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div className="container">

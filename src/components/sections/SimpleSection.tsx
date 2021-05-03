@@ -12,7 +12,15 @@ export interface SimpleSectionProps extends SectionContainerProps, SectionDivide
 }
 
 // définit une section simple avec un titre, un diviseur et le contenu à définir dans les enfants
-export default function SimpleSection({ id, title, background, text, light, icon, children }: SimpleSectionProps) {
+export default function SimpleSection({
+    id,
+    title,
+    background,
+    text,
+    light,
+    icon,
+    children
+}: SimpleSectionProps): JSX.Element {
     return (
         <SectionContainer id={id} background={background} text={text}>
             {/* Section Heading */}

@@ -8,7 +8,7 @@ export interface PageHead {
 }
 
 // définit la head par défaut de la page (import de l'ico, passages de meta, imports des google fonts)
-export default function DefaultHead({ title, noIndex, description, author }: PageHead) {
+export default function DefaultHead({ title, noIndex, description, author }: PageHead): JSX.Element {
     return (
         <NextHead>
             {noIndex && <meta name="robots" content="noindex"></meta>}

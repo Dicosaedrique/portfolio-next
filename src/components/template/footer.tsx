@@ -5,7 +5,7 @@ export interface FooterInfos extends ContactInfos {
 }
 
 // footer du portfolio (affichage de la section de contact)
-export default function Footer({ title, linkedIn, github, devTo, email }: FooterInfos) {
+export default function Footer({ title, linkedIn, github, devTo, email }: FooterInfos): JSX.Element {
     return (
         <footer className="footer text-center">
             <h4 className="text-uppercase mb-4">{title}</h4>
@@ -14,6 +14,6 @@ export default function Footer({ title, linkedIn, github, devTo, email }: Footer
     );
 }
 
-export function DefaultFooter() {
+export function DefaultFooter(): JSX.Element {
     return <Footer title="Où me trouver ?" {...defaultContactInfos} />;
 }

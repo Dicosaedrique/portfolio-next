@@ -20,6 +20,6 @@ export interface ProjectData extends ProjectPreview {
 }
 
 // renvoi le lien vers un projet à partir de son id
-export function getProjectLinkFromId(id: string) {
+export function getProjectLinkFromId(id: string): string {
     return `/portfolio/${id}`;
 }

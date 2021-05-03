@@ -1,14 +1,14 @@
-import PortfolioList from '../../PortfolioList';
-import SimpleSection from '../../sections/SimpleSection';
-import { AutoSectionProps } from '../../sections/SectionsPage';
 import { ProjectPreview } from '../../../lib/project';
+import PortfolioList from '../../PortfolioList';
+import { AutoSectionProps } from '../../sections/SectionsPage';
+import SimpleSection from '../../sections/SimpleSection';
 
 interface Props extends AutoSectionProps {
     projectPreviews: ProjectPreview[];
 }
 
 // section portfolio, une liste de projets redirigeant vers leur page
-export default function Portfolio({ background, text, light, projectPreviews }: Props) {
+export default function Portfolio({ background, text, light, projectPreviews }: Props): JSX.Element {
     return (
         <SimpleSection id="portfolio" title="Mon portfolio" icon="fas fa-medal" {...{ background, text, light }}>
             <h4 className="text-center my-5 text-secondary">

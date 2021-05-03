@@ -3,7 +3,7 @@ interface Props {
 }
 
 // composant permettant d'importer des scripts javascript statiques
-export default function StaticImportScripts({ scripts }: Props) {
+export default function StaticImportScripts({ scripts }: Props): JSX.Element {
     return (
         <>
             {scripts.map((script, idx) => (
@@ -20,6 +20,6 @@ export const DEFAULT_SCRIPTS = [
     '/js/scripts.js'
 ];
 
-export function DefaultScriptsImport() {
+export function DefaultScriptsImport(): JSX.Element {
     return <StaticImportScripts scripts={DEFAULT_SCRIPTS} />;
 }

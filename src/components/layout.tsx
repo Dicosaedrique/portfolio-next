@@ -21,7 +21,7 @@ export default function Layout({
     footer,
     children,
     copyright
-}: LayoutProps) {
+}: LayoutProps): JSX.Element {
     return (
         <>
             {/* Head par défaut de la page */}
@@ -44,17 +44,18 @@ export default function Layout({
                         <br />
                         <small>
                             Site créé à partir du thème{' '}
-                            <a href="https://startbootstrap.com/theme/freelancer" target="_blank">
+                            <a href="https://startbootstrap.com/theme/freelancer" target="_blank" rel="noreferrer">
                                 Freelancer
                             </a>{' '}
                             par{' '}
-                            <a href="http://startbootstrap.com" target="_blank">
+                            <a href="http://startbootstrap.com" target="_blank" rel="noreferrer">
                                 Start Bootstrap
                             </a>
                             . Publié sous la licence{' '}
                             <a
                                 href="https://github.com/startbootstrap/startbootstrap-freelancer/blob/master/LICENSE"
-                                target="_blank">
+                                target="_blank"
+                                rel="noreferrer">
                                 MIT
                             </a>
                             . Version 6.0.5

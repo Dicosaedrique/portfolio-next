@@ -1,11 +1,11 @@
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { useEffect } from 'react';
 
 import Layout, { PageInfos } from '../../components/layout';
-import { getAllProjectIds, getProjectDataFromId } from '../../lib/project.next';
-import { ProjectData } from '../../lib/project';
-import { GetStaticProps, GetStaticPaths } from 'next';
 import Header from '../../components/template/header';
 import setupGallery from '../../lib/gallery';
+import { ProjectData } from '../../lib/project';
+import { getAllProjectIds, getProjectDataFromId } from '../../lib/project.next';
 
 interface ProjectPageProps {
     pageInfos: PageInfos;
@@ -13,7 +13,7 @@ interface ProjectPageProps {
 }
 
 // page template d'un projet du portfolio
-export default function ProjectPage({ pageInfos, project }: ProjectPageProps) {
+export default function ProjectPage({ pageInfos, project }: ProjectPageProps): JSX.Element {
     // créer la gallerie
     useEffect(() => {
         setupGallery({ containerId: 'gallery' });
@@ -69,7 +69,8 @@ export default function ProjectPage({ pageInfos, project }: ProjectPageProps) {
                                     className="btn btn mb-3 btn-outline-secondary"
                                     href={project.source}
                                     target="_blank"
-                                    role="button">
+                                    role="button"
+                                    rel="noreferrer">
                                     <i className="fab fa-lg fa-github me-2"></i> Code source
                                 </a>
                             )}

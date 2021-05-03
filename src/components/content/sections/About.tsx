@@ -1,11 +1,11 @@
-import SimpleSection from '../../sections/SimpleSection';
-import { AutoSectionProps } from '../../sections/SectionsPage';
 import { useState } from 'react';
 
+import { AutoSectionProps } from '../../sections/SectionsPage';
+import SimpleSection from '../../sections/SimpleSection';
 import styles from './About.module.css';
 
 // section à propos
-export default function About(props: AutoSectionProps) {
+export default function About(props: AutoSectionProps): JSX.Element {
     const [isPro, setPro] = useState(true);
 
     const togglePro = () => setPro(!isPro);
@@ -38,17 +38,18 @@ export default function About(props: AutoSectionProps) {
                             <a
                                 className="text-secondary"
                                 href="https://www.uqac.ca/programme/3037-maitrise-en-informatique/"
-                                target="_blank">
-                                maîtrise en informatique de l'UQAC
+                                target="_blank"
+                                rel="noreferrer">
+                                maîtrise en informatique de l&apos;UQAC
                             </a>{' '}
                             au Québec, je souhaite affiner et concrétiser mes compétences à travers un stage de fin
-                            d'études.
+                            d&apos;études.
                         </p>
                         <p>
                             Mes compétences acquises me permettent de modéliser, concevoir et implémenter des
                             applications répondant aux besoins des utilisateurs. En suivant les bonnes pratiques de
-                            l'ingénierie logicielle, je m'efforce de produire des solutions adaptées, propres et
-                            maintenables.
+                            l&apos;ingénierie logicielle, je m&apos;efforce de produire des solutions adaptées, propres
+                            et maintenables.
                         </p>
                     </div>
                 </div>
@@ -63,8 +64,8 @@ export default function About(props: AutoSectionProps) {
                             <div className="divider-custom-line"></div>
                         </div>
                         <p>
-                            Sur mon temps libre j'aime développer des projets pour apprendre de nouvelles technologies
-                            du web.
+                            Sur mon temps libre j&apos;aime développer des projets pour apprendre de nouvelles
+                            technologies du web.
                         </p>
                     </div>
                     <div className="col lead">
@@ -94,7 +95,8 @@ export default function About(props: AutoSectionProps) {
                             <a
                                 href="https://www.tvtime.com/fr/user/49417036/profile"
                                 target="_blank"
-                                className="text-secondary">
+                                className="text-secondary"
+                                rel="noreferrer">
                                 TV Time
                             </a>
                             .
@@ -109,9 +111,13 @@ export default function About(props: AutoSectionProps) {
                             <div className="divider-custom-line"></div>
                         </div>
                         <p>
-                            Une partie de jeu vidéo de temps en temps ne fait jamais de mal, j'aime jouer à des jeux
-                            comme Skyrim, Minecraft et Far Cry. Tu peux me défier sur{' '}
-                            <a href="https://tetris.com/play-tetris" target="_blank" className="text-secondary">
+                            Une partie de jeu vidéo de temps en temps ne fait jamais de mal, j&apos;aime jouer à des
+                            jeux comme Skyrim, Minecraft et Far Cry. Tu peux me défier sur{' '}
+                            <a
+                                href="https://tetris.com/play-tetris"
+                                target="_blank"
+                                className="text-secondary"
+                                rel="noreferrer">
                                 Tetris®
                             </a>{' '}
                             et battre mon score record de <span className="text-secondary">562,965</span> !

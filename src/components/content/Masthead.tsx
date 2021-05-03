@@ -2,11 +2,11 @@ import Header from '../template/header';
 import Contact, { defaultContactInfos } from './Contact';
 
 // définit le master head de la page d'accueil
-export default function Masthead() {
+export default function Masthead(): JSX.Element {
     return (
         <Header>
             {/* Masthead Avatar Image */}
-            <img src="/images/profil.png" className="masthead-avatar mb-5 rounded-circle" alt="photo de l'auteur" />
+            <img src="/images/profil.png" className="masthead-avatar mb-5 rounded-circle" alt="Antoine Bouabana" />
             {/* Masthead Heading */}
             <h1 className="masthead-heading text-uppercase mb-0">
                 Développeur Web
@@ -23,8 +23,12 @@ export default function Masthead() {
             </div>
 
             {/* Masthead Subheading */}
-            <p className="masthead-subheading font-weight-light">Étudiant en Informatique à l'UQAC (Québec)</p>
-            <a className="text-light mb-4" href="https://goo.gl/maps/j2K89sgKMcmoL1eQA" target="_blank">
+            <p className="masthead-subheading font-weight-light">Étudiant en Informatique à l&apos;UQAC (Québec)</p>
+            <a
+                className="text-light mb-4"
+                href="https://goo.gl/maps/j2K89sgKMcmoL1eQA"
+                target="_blank"
+                rel="noreferrer">
                 <i className="fa fa-map-marker-alt me-2"></i> Chicoutimi (QC), Canada
             </a>
             <br />

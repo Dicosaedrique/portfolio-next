@@ -4,7 +4,6 @@ export interface AutoSectionProps {
     background?: string; // couleur de fond (optionnel par défaut clair = blanc)
     text?: string; // couleur du texte (optionnel par défaut fond foncé = texte blanc)
     light?: boolean; // pour les diviseur (true = fond foncé)
-    [key: string]: any;
 }
 
 export interface SectionsPagesProps {
@@ -23,7 +22,7 @@ export default function SectionsPages({
     lightText = 'secondary',
     darkText = 'white',
     darkBackground = 'primary'
-}: SectionsPagesProps) {
+}: SectionsPagesProps): JSX.Element {
     const lightProps: AutoSectionProps = { text: lightText, light: false };
     const darkProps: AutoSectionProps = { background: darkBackground, text: darkText, light: true };
 

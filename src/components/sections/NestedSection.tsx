@@ -14,7 +14,15 @@ export interface ComplexSectionProps extends SectionContainerProps, SectionDivid
 // définit une section nestée c'est à dire une section avec des sous-sections
 // le titre principal de la super section est entouré de diviseur au lieu d'en avoir juste au dessus
 // les sous sections sont passées par leur props
-export default function NestedSection({ id, title, background, text, light, icon, subSections }: ComplexSectionProps) {
+export default function NestedSection({
+    id,
+    title,
+    background,
+    text,
+    light,
+    icon,
+    subSections
+}: ComplexSectionProps): JSX.Element {
     return (
         <SectionContainer id={id} background={background} text={text}>
             {/* Section Heading */}

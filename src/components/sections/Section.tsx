@@ -9,7 +9,7 @@ interface SectionContainerActualProps extends SectionContainerProps {
 }
 
 // définit le conteneur d'une section (réglage de la couleur de fond et de la couleur du texte disponible)
-export function SectionContainer({ id, background, text, children }: SectionContainerActualProps) {
+export function SectionContainer({ id, background, text, children }: SectionContainerActualProps): JSX.Element {
     let classNames = 'page-section mb-0';
     if (background) classNames += ` bg-${background}`;
     if (text) classNames += ` text-${text}`;
@@ -27,7 +27,7 @@ export interface SectionDividerProps {
 }
 
 // définit un diviseur dans une section, il peut contenir un icône ou non
-export function SectionDivider({ icon, light = false }: SectionDividerProps) {
+export function SectionDivider({ icon, light = false }: SectionDividerProps): JSX.Element {
     return (
         <div className={`divider-custom divider${light ? '-light' : ''}`}>
             {icon && (
@@ -49,7 +49,7 @@ export interface SectionTitleProps {
 }
 
 // définit le titre d'une section (titre en majuscules optionnel)
-export function SectionTitle({ title, uppercase = true }: SectionTitleProps) {
+export function SectionTitle({ title, uppercase = true }: SectionTitleProps): JSX.Element {
     let classNames = 'page-section-heading text-center ';
     if (uppercase) classNames += 'text-uppercase';
     return <h2 className={classNames}>{title}</h2>;

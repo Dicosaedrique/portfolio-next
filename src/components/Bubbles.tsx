@@ -7,7 +7,7 @@ export interface BubbleProps {
 }
 
 // définit une bulle d'infos (une image arrondie, un titre et du texte optionnel)
-function Bubble({ title, text, image, small, alt = '' }: BubbleProps) {
+function Bubble({ title, text, image, small, alt = '' }: BubbleProps): JSX.Element {
     return (
         <div className={`col my-4 ${small ? '' : 'px-lg-4'}`}>
             <img className="img-fluid w-50 rounded-circle bg-white" src={image} alt={alt} />
@@ -24,7 +24,7 @@ export interface BubblesContainerProps {
 
 // définit un conteneur de bulles avec la possibilité de régler leur taille (grosse, petite)
 // gestion intelligente des chemins avec "imagePrefix"
-export default function BubblesContainer({ small, bubbles }: BubblesContainerProps) {
+export default function BubblesContainer({ small, bubbles }: BubblesContainerProps): JSX.Element {
     let classNames = 'row justify-content-center text-center mt-5';
 
     if (small) classNames += ' row-cols-2 row-cols-md-3 row-cols-lg-4';

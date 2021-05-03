@@ -1,10 +1,11 @@
 import React from 'react';
+
 import BubblesContainer from '../../Bubbles';
 import NestedSection, { SubSectionProps } from '../../sections/NestedSection';
 import { AutoSectionProps } from '../../sections/SectionsPage';
 
 // section des compétences soit une section nestée contenant différentes catégories de compétences définit plus bas
-export default function Skills(props: AutoSectionProps) {
+export default function Skills(props: AutoSectionProps): JSX.Element {
     SKILL_SUBSECTION.forEach((subSection) => (subSection.light = props.light));
 
     return (
