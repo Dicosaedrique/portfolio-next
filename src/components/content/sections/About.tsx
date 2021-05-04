@@ -8,7 +8,7 @@ import styles from './About.module.css';
 export default function About(props: AutoSectionProps): JSX.Element {
     const [isPro, setPro] = useState(true);
 
-    const togglePro = () => setPro(!isPro);
+    const togglePro = (): void => setPro(!isPro);
 
     return (
         <SimpleSection id="about" title="À propos" {...props}>

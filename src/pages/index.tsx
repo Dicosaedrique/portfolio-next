@@ -31,7 +31,7 @@ export default function HomePage({ pageHead, footer, copyright, navbarInfos, pro
 }
 
 // listes des sections à mettre dans la page d'accueil
-const SECTIONS: React.FunctionComponent<AutoSectionProps>[] = [Skills, CV, About];
+const SECTIONS: React.FunctionComponent<AutoSectionProps>[] = [About, Skills, CV];
 
 // propriétés statique de la page d'accueil
 export const getStaticProps: GetStaticProps = async () => {
@@ -53,9 +53,9 @@ export const getStaticProps: GetStaticProps = async () => {
                 // devrait être plus intelligent
                 links: [
                     { title: 'Mon portfolio', href: '#portfolio' },
+                    { title: 'À propos', href: '#about' },
                     { title: 'Mes compétences', href: '#competences' },
-                    { title: 'Mon CV', href: '#cv' },
-                    { title: 'À propos', href: '#about' }
+                    { title: 'Mon CV', href: '#cv' }
                 ]
             },
             projectPreviews
