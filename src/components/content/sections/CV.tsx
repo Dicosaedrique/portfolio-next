@@ -16,7 +16,7 @@ export default function CV(props: AutoSectionProps): JSX.Element {
                         <a
                             className={`btn btn-xl btn-outline-${props.light ? 'light' : 'secondary'}`}
                             target="_blank"
-                            href="/files/cv_antoine_bouabana_2021.pdf">
+                            href="/files/cv_antoine_bouabana.pdf">
                             <i className="fas fa-download me-2"></i>
                             Télécharger (PDF)
                         </a>
