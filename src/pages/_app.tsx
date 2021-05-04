@@ -10,8 +10,21 @@ import '../styles/style.css';
 import '../styles/gallery.css';
 
 import { AppProps } from 'next/app';
+import Router from 'next/router';
+import React, { useEffect } from 'react';
+
+import { GTMPageView, PageEventProps } from '../lib/gtm';
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
+    // lance google tag manager
+    useEffect(() => {
+        const handleRouteChange = (url: string): PageEventProps => GTMPageView(url);
+        Router.events.on('routeChangeComplete', handleRouteChange);
+        return (): void => {
+            Router.events.off('routeChangeComplete', handleRouteChange);
+        };
+    }, []);
+
     return <Component {...pageProps} />;
 }
 

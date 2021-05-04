@@ -32,7 +32,8 @@ module.exports = {
         'prettier/prettier': ['error', { endOfLine: 'auto' }, { usePrettierrc: true }],
         'react/react-in-jsx-scope': 'off',
         'react/prop-types': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'warn',
+        '@typescript-eslint/ban-ts-comment': 'warn',
         'simple-import-sort/imports': 'error',
         'simple-import-sort/exports': 'error',
         'jsx-a11y/anchor-is-valid': [
