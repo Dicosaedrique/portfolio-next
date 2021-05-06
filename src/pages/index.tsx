@@ -52,10 +52,10 @@ export const getStaticProps: GetStaticProps = async () => {
                 main: { title: 'Antoine Bouabana', href: `#${bodyId}` },
                 // devrait être plus intelligent
                 links: [
-                    { title: 'Mon portfolio', href: '#portfolio' },
-                    { title: 'À propos', href: '#about' },
-                    { title: 'Mes compétences', href: '#competences' },
-                    { title: 'Mon CV', href: '#cv' }
+                    { title: 'Mon portfolio', href: '#portfolio', spyId: 'portfolio' },
+                    { title: 'À propos', href: '#about', spyId: 'about' },
+                    { title: 'Mes compétences', href: '#competences', spyId: 'competences' },
+                    { title: 'Mon CV', href: '#cv', spyId: 'cv' }
                 ]
             },
             projectPreviews

@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+
+import { jqueryInitScrollToTop } from '../lib/jquery.utils';
 import { DefaultFooter } from './template/footer';
 import DefaultHead, { PageHead } from './template/head';
 import Navbar, { NavBarProps } from './template/nav';
@@ -22,6 +25,10 @@ export default function Layout({
     children,
     copyright
 }: LayoutProps): JSX.Element {
+    useEffect(() => {
+        return jqueryInitScrollToTop();
+    }, []);
+
     return (
         <>
             {/* Head par défaut de la page */}
