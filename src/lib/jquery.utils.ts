@@ -80,8 +80,6 @@ export function jqueryInitScrollToTop(): Unsubscriber {
 
     // fonction de désabonnement
     return (): void => {
-        console.log('on désabonne');
-
         $(document).off('scroll', scrollToTop);
     };
 }

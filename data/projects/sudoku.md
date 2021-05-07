@@ -22,8 +22,8 @@ technologies:
     [
         { name: 'JavaScript', bold: true },
         { name: 'P5.js (WebGL)', bold: true },
-        { name: 'JQuery)', bold: true },
-        { name: 'Datatables)', bold: false },
+        { name: 'JQuery', bold: true },
+        { name: 'Datatables', bold: false },
         { name: 'Webpack (bundling)', bold: false },
         { name: 'Prettier', bold: false }
     ]
