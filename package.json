@@ -5,6 +5,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build && next export",
+        "postbuild": "next-sitemap --config next-sitemap.config.js",
         "start": "next start",
         "lint": "eslint src/**",
         "lint:fix": "eslint --fix src/**",
@@ -49,6 +50,7 @@
         "eslint-plugin-react-hooks": "^4.2.0",
         "eslint-plugin-simple-import-sort": "^7.0.0",
         "husky": "^6.0.0",
+        "next-sitemap": "^1.6.95",
         "prettier": "^2.2.1",
         "typescript": "^3.8.3"
     }
