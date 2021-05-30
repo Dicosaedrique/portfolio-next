@@ -1,4 +1,5 @@
 ---
+order: 4
 pageTitle: 'Portfolio - Résolution de Sudoku'
 title: 'Résolution de Sudoku<br/>(IA / Web)'
 subTitle: 'JavaScript, P5.js'

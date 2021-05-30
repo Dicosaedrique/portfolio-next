@@ -11,7 +11,20 @@ const projectsDataDirectory = path.join(process.cwd(), 'data', 'projects');
 // renvoi la liste de tous les ids de projet
 export function getAllProjectIds(): string[] {
     const fileNames = fs.readdirSync(projectsDataDirectory);
-    return fileNames.map((fileName) => fileName.replace(/\.md$/, ''));
+    const ids = fileNames.map((fileName) => fileName.replace(/\.md$/, ''));
+
+    const temp: { id: string; order: number }[] = [];
+
+    for (const id of ids) {
+        // on récupère juste l'ordre dans le fichier (si non défini, place l'élément en dernier)
+        const order = (matter(readProjectFileFromId(id)).data as { order: number | undefined }).order || id.length;
+        temp.push({ id, order });
+    }
+
+    // tri des projets par ordre
+    temp.sort((a, b) => a.order - b.order);
+
+    return temp.map((obj) => obj.id);
 }
 
 // renvoi le contenu d'un fichier de projet à partir de son id

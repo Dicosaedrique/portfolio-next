@@ -1,4 +1,5 @@
 ---
+order: 3
 pageTitle: 'Portfolio - Projet Algorithme génétique'
 title: 'Algorithmes génétique (IA / Web)'
 subTitle: 'TypeScript, Web Workers, ChartJS, JQuery'

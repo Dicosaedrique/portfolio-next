@@ -51,16 +51,25 @@ export default function Layout({
                         <br />
                         <small>
                             Site créé à partir du thème{' '}
-                            <a href="https://startbootstrap.com/theme/freelancer" target="_blank" rel="noreferrer">
+                            <a
+                                href="https://startbootstrap.com/theme/freelancer"
+                                className="text-primary"
+                                target="_blank"
+                                rel="noreferrer">
                                 Freelancer
                             </a>{' '}
                             par{' '}
-                            <a href="http://startbootstrap.com" target="_blank" rel="noreferrer">
+                            <a
+                                href="http://startbootstrap.com"
+                                className="text-primary"
+                                target="_blank"
+                                rel="noreferrer">
                                 Start Bootstrap
                             </a>
                             . Publié sous la licence{' '}
                             <a
                                 href="https://github.com/startbootstrap/startbootstrap-freelancer/blob/master/LICENSE"
+                                className="text-primary"
                                 target="_blank"
                                 rel="noreferrer">
                                 MIT
